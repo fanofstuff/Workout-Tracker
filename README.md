@@ -1,51 +1,30 @@
 # Unit 17 Nosql Homework: Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+This program is intended to be used as a Workout Tracker, meaning that the user can add, store, and update information pertaining to their workouts. This data will then be displayed in a variety of colorful graphs and charts, allowing the user to track their exercise progress over the course of a full week. This information will be stored not on their local machines, but instead in a MongoDB powered by mLab MongoDB. 
 
-## User Story
+## Intended Usage
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+According to the user story that came bundled with this project, the intent of this program is enable a user to create and track their daily workouts. To this end, this application should be able to log multiple exercises under one session, track a variety of information pertaining to these exercises, including duration and type (i.e. cardio vs resistance), and then display it via graphs and charts. 
 
-## Business Context
+## Features
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+- Store a variety of exercise information with a single workout session
+- Track your progress over time from multiple devices - if you can connect, you can store info from anywhere!
+- Dynamically generated charts and graphs displaying stored exercise information
 
-## Acceptance Criteria
+## Link to Published Page
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+(https://morning-oasis-32211.herokuapp.com/)
 
-The user should be able to:
+## How to Use
 
-  * Add exercises to a previous workout plan.
+1. Pull up the deployed site at https://morning-oasis-32211.herokuapp.com/
+2. Create a new Workout
+3. Add information about your exercises, clicking add where necessary
+4. For your last exercise, press complete to save and be returned to the home page
+5. Add additional exercises to your latest workout, or start a new workout from the home page
+6. Go to the dashboard to view your global stats
 
-  * Add new exercises to a new workout plan.
+## Credits
 
-  * View the combined weight of multiple exercises on the `stats` page.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the Github repository
+© 2019 fanofstuff
