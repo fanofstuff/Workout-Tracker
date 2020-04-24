@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+// I'll be honest, this is pretty cool - 
+// I particularly like how it's color-coded depending upon the existance and source of an error
 app.use(morgan("dev"));
 
 app.use(express.urlencoded({ extended: true }));
