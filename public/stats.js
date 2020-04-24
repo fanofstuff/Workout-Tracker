@@ -2,11 +2,11 @@
 
 //This entire thing is kind of silly - near as I can tell, it's just pasting the data in sequential order
 //meaning that it doesn't even seem to be mapped to the date at all! Furthermore, two workouts in one
-//day don't actually sum their durations or anything. Bizarre. Not my problem at the moment, though. 
+//day don't actually sum their durations or anything. Bizarre. Not my problem at the moment, though.
 
 // I suspect that we're meant to add in a "sum of all exercises" function to the backend somewhere, actually...
 
-// I'm going to do that last, if at all. 
+// I'm going to do that last, if at all.
 
 fetch("/api/workouts/range")
   .then((response) => {
@@ -43,6 +43,7 @@ function generatePalette() {
 }
 function populateChart(data) {
   let durations = duration(data);
+  // let totalDurations = totalDuration(data);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
   const colors = generatePalette();
@@ -203,9 +204,41 @@ function duration(data) {
       durations.push(parseInt(exercise.duration, 10));
     });
   });
-  console.log(durations); 
   return durations;
 }
+
+// function totalDuration(data) {
+//   let durations = [];
+
+//   // data.forEach((workout) => {
+//   //   console.log(workout);
+//   //   workout.exercises.forEach((exercise) => {
+//   //     console.log(exercise);
+//   //     durations.push(exercise.duration);
+//   //   });
+//   // });
+
+//     data[0].exercises.forEach((exercise) => {
+//       console.log(exercise)
+//       const total = exercise.reduce((acc, curr) => {
+//         acc.totalDuration = (acc.totalDuration || 0) + curr.duration;
+//         console.log(acc);
+//         return acc;
+//       }, {});
+//       console.log(total.totalDuration)
+//       return total.totalDuration;
+//     })
+//   console.log(durations);
+//   return durations;
+// }
+
+// function totalDuration(exercises) {
+//   const total = exercises.reduce((acc, curr) => {
+//     acc.totalDuration = (acc.totalDuration || 0) + curr.duration;
+//     return acc;
+//   }, {});
+//   return total.totalDuration;
+// }
 
 function calculateTotalWeight(data) {
   let total = [];
