@@ -1,10 +1,19 @@
 // get all workout data from back-end
 
+//This entire thing is kind of silly - near as I can tell, it's just pasting the data in sequential order
+//meaning that it doesn't even seem to be mapped to the date at all! Furthermore, two workouts in one
+//day don't actually sum their durations or anything. Bizarre. Not my problem at the moment, though. 
+
+// I suspect that we're meant to add in a "sum of all exercises" function to the backend somewhere, actually...
+
+// I'm going to do that last, if at all. 
+
 fetch("/api/workouts/range")
   .then((response) => {
     return response.json();
   })
   .then((data) => {
+    console.log(data);
     populateChart(data);
   });
 
@@ -191,10 +200,10 @@ function duration(data) {
 
   data.forEach((workout) => {
     workout.exercises.forEach((exercise) => {
-      durations.push(exercise.duration);
+      durations.push(parseInt(exercise.duration, 10));
     });
   });
-
+  console.log(durations); 
   return durations;
 }
 
@@ -218,6 +227,5 @@ function workoutNames(data) {
       workouts.push(exercise.name);
     });
   });
-
   return workouts;
 }
